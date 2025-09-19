@@ -54,7 +54,9 @@ pipeline {
                     sh 'gcloud config set project $PROJECT_ID'
 
                     // Deploy the application to App Engine
-                    sh 'gcloud app deploy --quiet'
+                    sh 'gcloud app deploy  --bucket=gs://appenginejenkins \
+                      --version=jenkins-$(date +%Y%m%d%H%M%S) \
+                      --quiet'
                 }
             }
         }
