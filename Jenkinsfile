@@ -54,7 +54,7 @@ pipeline {
                     sh 'gcloud config set project $PROJECT_ID'
 
                     // Deploy the application to App Engine
-                    sh 'gcloud app deploy --bucket=gs://thinking-seer-455809-p6-deployments --quiet'
+                    sh 'gcloud app deploy --quiet'
                 }
             }
         }
