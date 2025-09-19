@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PROJECT_ID = 'avian-chariot-450105-b7'
+        PROJECT_ID = 'thinking-seer-455809-p6'
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')  // Service account credential
     }
 
@@ -54,7 +54,7 @@ pipeline {
                     sh 'gcloud config set project $PROJECT_ID'
 
                     // Deploy the application to App Engine
-                    sh 'gcloud app deploy --bucket=gs://avian-chariot-450105-deployments --quiet'
+                    sh 'gcloud app deploy --bucket=gs://thinking-seer-455809-p6-deployments --quiet'
                 }
             }
         }
